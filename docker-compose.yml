@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: haras_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: haras
+    ports:
+      - "3309:3306"
+    volumes:
+      - haras_data:/var/lib/mysql
+      - ./pasta_trabalho_bd:/work:ro
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  haras_data:
