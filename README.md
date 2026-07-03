@@ -49,6 +49,6 @@ The database schema, sample data, triggers, and views are automatically created 
 
 ## Authors
 
-* Gabriel Chrusczak
-* Disney
-* Luis
+- **DISNEY BARBOSA**
+- **GABRIEL AQUINO CHRUSCZAK**
+- **LUIZ MIGUEL DA SILVA SANTOS**
