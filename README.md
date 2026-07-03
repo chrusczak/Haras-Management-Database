@@ -4,6 +4,10 @@ A MySQL-based horse farm management database designed to handle animal records, 
 
 The project implements relational database modeling, business rule enforcement through triggers, analytical views for reporting, and automated deployment using Docker.
 
+## Academic Context
+
+This project was developed as part of the Database Systems course in the Computer Engineering program at the Federal University of Mato Grosso (UFMT). The objective is to design and implement a relational database capable of supporting real-world business rules through SQL constraints, triggers, views, and data integrity mechanisms.
+
 ## Features
 
 * Relational database schema
@@ -46,8 +50,5 @@ The database schema, sample data, triggers, and views are automatically created 
 ## Authors
 
 * Gabriel Chrusczak
-* Disney 
+* Disney
 * Luis
-
-```
-```
