@@ -20,14 +20,17 @@ O sistema verifica a `data_vencimento` do lote (`fornecedor_vacina`) antes de re
 
 ### Regras de negócio
 
-**RN03 — Animal deve ter ao menos uma vacina obrigatória**
-Animais sem nenhuma vacina marcada como `obrigatoria = TRUE` no histórico não podem ser comercializados. Isso garante conformidade com exigências sanitárias para transporte e venda de bovinos.
+**RN08 — Cliente deve estar ativo**
+Clientes com status `INATIVO` não podem realizar compras. Isso permite suspender clientes inadimplentes ou com pendências sem excluí-los do sistema.
+
+**RN05 — Animal já vendido não pode ser vendido novamente**
+O trigger verifica o `status` do animal antes da venda. Se já estiver como `VENDIDO`, a operação é bloqueada. Após uma venda bem-sucedida, o status é atualizado automaticamente para `VENDIDO`.
 
 **RN04 — Idade mínima de 24 meses**
 Animais com menos de 24 meses de vida não estão aptos para venda. A idade é calculada dinamicamente com base na `data_nascimento` e na `data_venda`.
 
-**RN05 — Animal já vendido não pode ser vendido novamente**
-O trigger verifica o `status` do animal antes da venda. Se já estiver como `VENDIDO`, a operação é bloqueada. Após uma venda bem-sucedida, o status é atualizado automaticamente para `VENDIDO`.
+**RN03 — Animal deve ter ao menos uma vacina obrigatória**
+Animais sem nenhuma vacina marcada como `obrigatoria = TRUE` no histórico não podem ser comercializados. Isso garante conformidade com exigências sanitárias para transporte e venda de bovinos.
 
 ---
 
@@ -42,14 +45,3 @@ Somente fornecedores com status `ATIVO` podem ter lotes de vacinas registrados n
 
 **RN07 — Quantidade deve ser positiva**
 O campo `quantidade` deve ser maior que zero para garantir integridade dos dados de estoque.
-
----
-
-## TRIGGER 4 — `cliente_venda_trg`
-
-**Evento:** BEFORE INSERT em `venda`
-
-### Regras de negócio
-
-**RN08 — Cliente deve estar ativo**
-Clientes com status `INATIVO` não podem realizar compras. Isso permite suspender clientes inadimplentes ou com pendências sem excluí-los do sistema.
