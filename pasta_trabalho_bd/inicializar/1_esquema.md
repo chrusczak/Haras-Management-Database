@@ -2,7 +2,7 @@
 
 ## TABELA 1 — `funcionarios`
 
-### Finalidade t
+### Finalidade 
 Armazena os funcionários do haras responsáveis pelas atividades administrativas, manejo dos animais e vacinação.
 
 ### Principais atributos
